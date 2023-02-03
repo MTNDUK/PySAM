@@ -25,9 +25,12 @@ import PySAM.Utilityrate5 as UtilityRate
 import PySAM.Cashloan as Cashloan
 import PySAM.PySSC as pssc
 
+from datetime import datetime as dt
+
 ssc = pssc.PySSC()
 
-verbose = True  # Make False if you don't want all the debugging info.
+verbose = False  # Make False if you don't want all the debugging info.
+
 
 
 # Get the SAM json file, make the simulations we need for the commercial
@@ -42,24 +45,29 @@ with open(json_file_path) as f:
         dic = json.load(f)
 # The next seven lines are needed to load the PySAM data structures with the
 # inputs from the json file.
-pv_dat = pssc.dict_to_ssc_table(dic, "pvwattsv7")
-grid_dat = pssc.dict_to_ssc_table(dic, "grid")
-ur_dat = pssc.dict_to_ssc_table(dic, "utilityrate5")
-cl_dat = pssc.dict_to_ssc_table(dic, "cashloan")
-pv = PVWatts.wrap(pv_dat)
-grid = Grid.from_existing(pv)
-ur = UtilityRate.from_existing(pv)
-cl = Cashloan.from_existing(pv)
-grid.assign(Grid.wrap(grid_dat).export())
-ur.assign(UtilityRate.wrap(ur_dat).export())
-cl.assign(Cashloan.wrap(cl_dat).export())
 
-# The models are executed in order.  Note that the outputs from the first
-# simulation are automatically available for the next one, and so on.  :-)
-pv.execute()
-grid.execute()
-ur.execute()
-cl.execute()
+start = dt.now()
+for i in range (0, 100):
+      pv_dat = pssc.dict_to_ssc_table(dic, "pvwattsv7")
+      grid_dat = pssc.dict_to_ssc_table(dic, "grid")
+      ur_dat = pssc.dict_to_ssc_table(dic, "utilityrate5")
+      cl_dat = pssc.dict_to_ssc_table(dic, "cashloan")
+      pv = PVWatts.wrap(pv_dat)
+      grid = Grid.from_existing(pv)
+      ur = UtilityRate.from_existing(pv)
+      cl = Cashloan.from_existing(pv)
+      grid.assign(Grid.wrap(grid_dat).export())
+      ur.assign(UtilityRate.wrap(ur_dat).export())
+      cl.assign(Cashloan.wrap(cl_dat).export())
+
+      # The models are executed in order.  Note that the outputs from the first
+      # simulation are automatically available for the next one, and so on.  :-)
+      pv.execute()
+      grid.execute()
+      ur.execute()
+      cl.execute()
+
+print('Run complete in ', dt.now()-start)
 
 if verbose:  # Print out some results.  The variable names can be found in
     # the model pages of the docs.
