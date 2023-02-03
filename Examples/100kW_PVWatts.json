@@ -1,5 +1,5 @@
 {
-	"solar_resource_file" : "/Users/dguittet/SAM Downloaded Weather Files/weather.csv",
+	"solar_resource_file" : "C:\\Users\\bmirletz\\SAM Downloaded Weather Files\\36.567885_-89.600876_36.5678_-89.6009_psm3-tmy_60_tmy.csv",
 	"system_use_lifetime_output" : 0,
 	"analysis_period" : 25,
 	"system_capacity" : 100,
