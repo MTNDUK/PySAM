@@ -34,6 +34,20 @@ class TroughPhysical(object):
 		file_name = str
 
 
+	class Weather(object):
+		def assign(self): 
+			pass
+	
+		def export(self) -> dict:
+			pass
+	
+		def __init__(self, *args, **kwargs): 
+			pass
+
+
+		solar_resource_data = dict
+
+
 	class SolarField(object):
 		def assign(self): 
 			pass

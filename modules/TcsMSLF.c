@@ -4331,7 +4331,7 @@ static PyGetSetDef Outputs_getset[] = {
 	PyDoc_STR("*sequence*: Resource Month"),
  	NULL},
 {"monthly_energy", (getter)Outputs_get_monthly_energy,(setter)0,
-	PyDoc_STR("*sequence*: Monthly Energy [kWh]"),
+	PyDoc_STR("*sequence*: Monthly Energy Gross [kWh]"),
  	NULL},
 {"phi_t", (getter)Outputs_get_phi_t,(setter)0,
 	PyDoc_STR("*sequence*: Field collector incidence angle - transversal [deg]"),

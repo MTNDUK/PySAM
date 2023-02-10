@@ -5018,7 +5018,7 @@ static PyGetSetDef Outputs_getset[] = {
 	PyDoc_STR("*sequence*: Electrical source - Power cycle gross output [MWhe]"),
  	NULL},
 {"monthly_energy", (getter)Outputs_get_monthly_energy,(setter)0,
-	PyDoc_STR("*sequence*: Monthly Energy [kWh]"),
+	PyDoc_STR("*sequence*: Monthly Energy Gross [kWh]"),
  	NULL},
 {"monthly_m_dot_makeup", (getter)Outputs_get_monthly_m_dot_makeup,(setter)0,
 	PyDoc_STR("*sequence*: Cooling water makeup flow rate [kg/hr]"),

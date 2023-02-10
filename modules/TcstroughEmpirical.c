@@ -3544,7 +3544,7 @@ static PyGetSetDef Outputs_getset[] = {
 	PyDoc_STR("*sequence*: Resource Month"),
  	NULL},
 {"monthly_energy", (getter)Outputs_get_monthly_energy,(setter)0,
-	PyDoc_STR("*sequence*: Monthly energy [kWh]"),
+	PyDoc_STR("*sequence*: Monthly energy gross [kWh]"),
  	NULL},
 {"o_SfTi", (getter)Outputs_get_o_SfTi,(setter)0,
 	PyDoc_STR("*sequence*: Field HTF temperature cold header inlet [C]"),

@@ -9,7 +9,7 @@ export WEXDIR=/Users/imacuser/Public/Projects/GitHub/NREL/wex
 export SSCDIR=/Users/imacuser/Public/Projects/GitHub/NREL/ssc
 export SAMNTDIR=/Users/imacuser/Public/Projects/GitHub/NREL/SAM
 export PYSAMDIR=/Users/imacuser/Public/Projects/GitHub/NREL/pysam
-
+export RAPIDJSONDIR=/Users/imacuser/Public/Projects/GitHub/NREL/ssc
 
 # Building libssc and libSAM_api
 # requires $ROOTDIR/CMakeList.txt that contains lk, wex, ssc and sam as subdirectories

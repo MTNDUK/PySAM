@@ -9458,22 +9458,22 @@ static PyGetSetDef BatterySystem_getset[] = {
 	PyDoc_STR("*float*: Battery interconnection (AC or DC)\n\n**Options:**\n0=DC_Connected,1=AC_Connected\n\nThe value of the following variables depends on ``batt_ac_or_dc``:\n\n\t - inverter_count\n\t - subarray1_modules_per_string\n\t - subarray1_nstrings\n\t - subarray2_enable\n\t - subarray3_enable\n\t - subarray4_enable\n\t - system_capacity\n"),
  	NULL},
 {"batt_computed_bank_capacity", (getter)BatterySystem_get_batt_computed_bank_capacity,(setter)BatterySystem_set_batt_computed_bank_capacity,
-	PyDoc_STR("*float*: Battery computed bank capacity [kWh]"),
+	PyDoc_STR("*float*: Battery computed bank capacity [kWh]\n\n**INOUT:** This variable is both an input and an output to the compute module."),
  	NULL},
 {"batt_computed_series", (getter)BatterySystem_get_batt_computed_series,(setter)BatterySystem_set_batt_computed_series,
-	PyDoc_STR("*float*: Battery number of cells in series"),
+	PyDoc_STR("*float*: Battery number of cells in series\n\n**INOUT:** This variable is both an input and an output to the compute module."),
  	NULL},
 {"batt_computed_strings", (getter)BatterySystem_get_batt_computed_strings,(setter)BatterySystem_set_batt_computed_strings,
-	PyDoc_STR("*float*: Battery number of strings of cells"),
+	PyDoc_STR("*float*: Battery number of strings of cells\n\n**INOUT:** This variable is both an input and an output to the compute module."),
  	NULL},
 {"batt_current_charge_max", (getter)BatterySystem_get_batt_current_charge_max,(setter)BatterySystem_set_batt_current_charge_max,
-	PyDoc_STR("*float*: Battery maximum charge current [A]"),
+	PyDoc_STR("*float*: Battery maximum charge current [A]\n\n**INOUT:** This variable is both an input and an output to the compute module."),
  	NULL},
 {"batt_current_choice", (getter)BatterySystem_get_batt_current_choice,(setter)BatterySystem_set_batt_current_choice,
 	PyDoc_STR("*float*: Limit cells by current or power"),
  	NULL},
 {"batt_current_discharge_max", (getter)BatterySystem_get_batt_current_discharge_max,(setter)BatterySystem_set_batt_current_discharge_max,
-	PyDoc_STR("*float*: Battery maximum discharge current [A]"),
+	PyDoc_STR("*float*: Battery maximum discharge current [A]\n\n**INOUT:** This variable is both an input and an output to the compute module."),
  	NULL},
 {"batt_dc_ac_efficiency", (getter)BatterySystem_get_batt_dc_ac_efficiency,(setter)BatterySystem_set_batt_dc_ac_efficiency,
 	PyDoc_STR("*float*: Battery DC to AC efficiency"),
@@ -9506,16 +9506,16 @@ static PyGetSetDef BatterySystem_getset[] = {
 	PyDoc_STR("*float*: Position of battery relative to electric meter\n\n**Options:**\n0=BehindTheMeter,1=FrontOfMeter"),
  	NULL},
 {"batt_power_charge_max_kwac", (getter)BatterySystem_get_batt_power_charge_max_kwac,(setter)BatterySystem_set_batt_power_charge_max_kwac,
-	PyDoc_STR("*float*: Battery maximum charge power (AC) [kWac]"),
+	PyDoc_STR("*float*: Battery maximum charge power (AC) [kWac]\n\n**INOUT:** This variable is both an input and an output to the compute module."),
  	NULL},
 {"batt_power_charge_max_kwdc", (getter)BatterySystem_get_batt_power_charge_max_kwdc,(setter)BatterySystem_set_batt_power_charge_max_kwdc,
-	PyDoc_STR("*float*: Battery maximum charge power (DC) [kWdc]"),
+	PyDoc_STR("*float*: Battery maximum charge power (DC) [kWdc]\n\n**INOUT:** This variable is both an input and an output to the compute module."),
  	NULL},
 {"batt_power_discharge_max_kwac", (getter)BatterySystem_get_batt_power_discharge_max_kwac,(setter)BatterySystem_set_batt_power_discharge_max_kwac,
-	PyDoc_STR("*float*: Battery maximum discharge power (AC) [kWac]"),
+	PyDoc_STR("*float*: Battery maximum discharge power (AC) [kWac]\n\n**INOUT:** This variable is both an input and an output to the compute module."),
  	NULL},
 {"batt_power_discharge_max_kwdc", (getter)BatterySystem_get_batt_power_discharge_max_kwdc,(setter)BatterySystem_set_batt_power_discharge_max_kwdc,
-	PyDoc_STR("*float*: Battery maximum discharge power (DC) [kWdc]\n\nThe value of the following variables depends on ``batt_power_discharge_max_kwdc``:\n\n\t - inverter_count\n\t - subarray1_modules_per_string\n\t - subarray1_nstrings\n\t - subarray2_enable\n\t - subarray3_enable\n\t - subarray4_enable\n\t - system_capacity\n"),
+	PyDoc_STR("*float*: Battery maximum discharge power (DC) [kWdc]\n\n**INOUT:** This variable is both an input and an output to the compute module.\n\nThe value of the following variables depends on ``batt_power_discharge_max_kwdc``:\n\n\t - inverter_count\n\t - subarray1_modules_per_string\n\t - subarray1_nstrings\n\t - subarray2_enable\n\t - subarray3_enable\n\t - subarray4_enable\n\t - system_capacity\n"),
  	NULL},
 {"batt_replacement_capacity", (getter)BatterySystem_get_batt_replacement_capacity,(setter)BatterySystem_set_batt_replacement_capacity,
 	PyDoc_STR("*float*: Capacity degradation at which to replace battery [%]"),
@@ -13458,6 +13458,12 @@ Outputs_get_annual_poa_rear_direct_diffuse(VarGroupObject *self, void *closure)
 }
 
 static PyObject *
+Outputs_get_annual_poa_rear_gain_percent(VarGroupObject *self, void *closure)
+{
+	return PySAM_double_getter(SAM_Pvsamv1_Outputs_annual_poa_rear_gain_percent_nget, self->data_ptr);
+}
+
+static PyObject *
 Outputs_get_annual_poa_rear_ground_reflected(VarGroupObject *self, void *closure)
 {
 	return PySAM_double_getter(SAM_Pvsamv1_Outputs_annual_poa_rear_ground_reflected_nget, self->data_ptr);
@@ -15756,6 +15762,9 @@ static PyGetSetDef Outputs_getset[] = {
 {"annual_poa_rear_direct_diffuse", (getter)Outputs_get_annual_poa_rear_direct_diffuse,(setter)0,
 	PyDoc_STR("*float*: POA rear-side direct and diffuse radiation after reflection (IAM) [kWh/yr]"),
  	NULL},
+{"annual_poa_rear_gain_percent", (getter)Outputs_get_annual_poa_rear_gain_percent,(setter)0,
+	PyDoc_STR("*float*: POA rear-side bifacial gain [%]"),
+ 	NULL},
 {"annual_poa_rear_ground_reflected", (getter)Outputs_get_annual_poa_rear_ground_reflected,(setter)0,
 	PyDoc_STR("*float*: POA rear-side radiation reflected from the ground after (IAM) [kWh/yr]"),
  	NULL},
@@ -16207,7 +16216,7 @@ static PyGetSetDef Outputs_getset[] = {
 	PyDoc_STR("*sequence*: DC energy [kWh/mo]"),
  	NULL},
 {"monthly_energy", (getter)Outputs_get_monthly_energy,(setter)0,
-	PyDoc_STR("*sequence*: AC energy [kWh/mo]"),
+	PyDoc_STR("*sequence*: AC energy gross [kWh/mo]"),
  	NULL},
 {"monthly_grid_to_batt", (getter)Outputs_get_monthly_grid_to_batt,(setter)0,
 	PyDoc_STR("*sequence*: Energy to battery from grid [kWh]"),
