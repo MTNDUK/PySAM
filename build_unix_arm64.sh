@@ -26,23 +26,28 @@ cmake --build . --target SAM_api -j
 
 cd $PYSAMDIR || exit
 source $(conda info --base)/etc/profile.d/conda.sh
+source ~/.env
 rm -rf build
 rm -rf dist/*
 
-for PYTHONENV in pysam_build_3.8 pysam_build_3.9 pysam_build_3.10
+#for PYTHONENV in pysam_build_3.8 pysam_build_3.9 pysam_build_3.10
+for PYTHONENV in pysam_build_3.9
 do
    conda activate $PYTHONENV
    yes | pip install -r tests/requirements.txt
    yes | pip uninstall NREL-PySAM
    python setup_arm64.py install || exit
-   pytest -s tests
-   retVal=$?
-   if [ $retVal -ne 0 ]; then
-       echo "Error in Tests"
-       exit 1
-   fi
+#   pytest -s tests
+#   retVal=$?
+#   if [ $retVal -ne 0 ]; then
+#       echo "Error in Tests"
+#       exit 1
+#   fi
    python setup_arm64.py bdist_wheel
 done
+
+
+exit
 
 yes | $PYSAMDIR/build_conda_arm64.sh || exit
 

@@ -20,12 +20,6 @@ Weather Group
 .. autoclass:: PySAM.TroughPhysical.TroughPhysical.Weather
 	:members:
 
-Weather Group
---------------
-
-.. autoclass:: PySAM.TroughPhysical.TroughPhysical.Weather
-	:members:
-
 SolarField Group
 -----------------
 
