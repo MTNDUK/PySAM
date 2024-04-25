@@ -4509,143 +4509,6 @@ static PyTypeObject TowerAndReceiver_Type = {
 
 
 /*
- * SolarResourceData Group
- */ 
-
-static PyTypeObject SolarResourceData_Type;
-
-static PyObject *
-SolarResourceData_new(SAM_TroughPhysicalIph data_ptr)
-{
-	PyObject* new_obj = SolarResourceData_Type.tp_alloc(&SolarResourceData_Type,0);
-
-	VarGroupObject* SolarResourceData_obj = (VarGroupObject*)new_obj;
-
-	SolarResourceData_obj->data_ptr = (SAM_table)data_ptr;
-
-	return new_obj;
-}
-
-/* SolarResourceData methods */
-
-static PyObject *
-SolarResourceData_assign(VarGroupObject *self, PyObject *args)
-{
-	PyObject* dict;
-	if (!PyArg_ParseTuple(args, "O:assign", &dict)){
-		return NULL;
-	}
-
-	if (!PySAM_assign_from_dict(self->data_ptr, dict, "TroughPhysicalIph", "SolarResourceData")){
-		return NULL;
-	}
-
-	Py_INCREF(Py_None);
-	return Py_None;
-}
-
-static PyObject *
-SolarResourceData_replace(VarGroupObject *self, PyObject *args)
-{
-	PyObject* dict;
-	if (!PyArg_ParseTuple(args, "O:assign", &dict)){
-		return NULL;
-	}
-	PyTypeObject* tp = &SolarResourceData_Type;
-
-	if (!PySAM_replace_from_dict(tp, self->data_ptr, dict, "TroughPhysicalIph", "SolarResourceData")){
-		return NULL;
-	}
-
-	Py_INCREF(Py_None);
-	return Py_None;
-}
-
-static PyObject *
-SolarResourceData_export(VarGroupObject *self, PyObject *args)
-{
-	PyTypeObject* tp = &SolarResourceData_Type;
-	PyObject* dict = PySAM_export_to_dict((PyObject *) self, tp);
-	return dict;
-}
-
-static PyMethodDef SolarResourceData_methods[] = {
-		{"assign",            (PyCFunction)SolarResourceData_assign,  METH_VARARGS,
-			PyDoc_STR("assign(dict) -> None\n Assign attributes from dictionary, overwriting but not removing values.\n\n``SolarResourceData_vals = { var: val, ...}``")},
-		{"replace",            (PyCFunction)SolarResourceData_replace,  METH_VARARGS,
-			PyDoc_STR("replace(dict) -> None\n Replace attributes from dictionary, unassigning values not present in input ``dict``.\n\n``SolarResourceData_vals = { var: val, ...}``")},
-		{"export",            (PyCFunction)SolarResourceData_export,  METH_VARARGS,
-			PyDoc_STR("export() -> dict\n Export attributes into dictionary.")},
-		{NULL,              NULL}           /* sentinel */
-};
-
-static PyObject *
-SolarResourceData_get_lat(VarGroupObject *self, void *closure)
-{
-	return PySAM_double_getter(SAM_TroughPhysicalIph_SolarResourceData_lat_nget, self->data_ptr);
-}
-
-static int
-SolarResourceData_set_lat(VarGroupObject *self, PyObject *value, void *closure)
-{
-	return PySAM_double_setter(value, SAM_TroughPhysicalIph_SolarResourceData_lat_nset, self->data_ptr);
-}
-
-static PyGetSetDef SolarResourceData_getset[] = {
-{"lat", (getter)SolarResourceData_get_lat,(setter)SolarResourceData_set_lat,
-	PyDoc_STR("*float*: Latitude [degree]\n\n**Required:**\nTrue"),
- 	NULL},
-	{NULL}  /* Sentinel */
-};
-
-static PyTypeObject SolarResourceData_Type = {
-		/* The ob_type field must be initialized in the module init function
-		 * to be portable to Windows without using C++. */
-		PyVarObject_HEAD_INIT(NULL, 0)
-		"TroughPhysicalIph.SolarResourceData",             /*tp_name*/
-		sizeof(VarGroupObject),          /*tp_basicsize*/
-		0,                          /*tp_itemsize*/
-		/* methods */
-		0,    /*tp_dealloc*/
-		0,                          /*tp_print*/
-		(getattrfunc)0,             /*tp_getattr*/
-		0,                          /*tp_setattr*/
-		0,                          /*tp_reserved*/
-		0,                          /*tp_repr*/
-		0,                          /*tp_as_number*/
-		0,                          /*tp_as_sequence*/
-		0,                          /*tp_as_mapping*/
-		0,                          /*tp_hash*/
-		0,                          /*tp_call*/
-		0,                          /*tp_str*/
-		0,                          /*tp_getattro*/
-		0,                          /*tp_setattro*/
-		0,                          /*tp_as_buffer*/
-		Py_TPFLAGS_DEFAULT,         /*tp_flags*/
-		0,                          /*tp_doc*/
-		0,                          /*tp_traverse*/
-		0,                          /*tp_clear*/
-		0,                          /*tp_richcompare*/
-		0,                          /*tp_weaklistofnset*/
-		0,                          /*tp_iter*/
-		0,                          /*tp_iternext*/
-		SolarResourceData_methods,         /*tp_methods*/
-		0,                          /*tp_members*/
-		SolarResourceData_getset,          /*tp_getset*/
-		0,                          /*tp_base*/
-		0,                          /*tp_dict*/
-		0,                          /*tp_descr_get*/
-		0,                          /*tp_descr_set*/
-		0,                          /*tp_dictofnset*/
-		0,                          /*tp_init*/
-		0,                          /*tp_alloc*/
-		0,             /*tp_new*/
-		0,                          /*tp_free*/
-		0,                          /*tp_is_gc*/
-};
-
-
-/*
  * CapitalCosts Group
  */ 
 
@@ -7587,10 +7450,6 @@ newTroughPhysicalIphObject(void* data_ptr)
 	PyDict_SetItemString(attr_dict, "TowerAndReceiver", TowerAndReceiver_obj);
 	Py_DECREF(TowerAndReceiver_obj);
 
-	PyObject* SolarResourceData_obj = SolarResourceData_new(self->data_ptr);
-	PyDict_SetItemString(attr_dict, "SolarResourceData", SolarResourceData_obj);
-	Py_DECREF(SolarResourceData_obj);
-
 	PyObject* CapitalCosts_obj = CapitalCosts_new(self->data_ptr);
 	PyDict_SetItemString(attr_dict, "CapitalCosts", CapitalCosts_obj);
 	Py_DECREF(CapitalCosts_obj);
@@ -8016,13 +7875,6 @@ TroughPhysicalIphModule_exec(PyObject *m)
 				"TowerAndReceiver",
 				(PyObject*)&TowerAndReceiver_Type);
 	Py_DECREF(&TowerAndReceiver_Type);
-
-	/// Add the SolarResourceData type object to TroughPhysicalIph_Type
-	if (PyType_Ready(&SolarResourceData_Type) < 0) { goto fail; }
-	PyDict_SetItemString(TroughPhysicalIph_Type.tp_dict,
-				"SolarResourceData",
-				(PyObject*)&SolarResourceData_Type);
-	Py_DECREF(&SolarResourceData_Type);
 
 	/// Add the CapitalCosts type object to TroughPhysicalIph_Type
 	if (PyType_Ready(&CapitalCosts_Type) < 0) { goto fail; }

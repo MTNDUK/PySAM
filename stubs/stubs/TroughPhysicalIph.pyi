@@ -401,20 +401,6 @@ class TroughPhysicalIph(object):
 		piping_loss = float
 
 
-	class SolarResourceData(object):
-		def assign(self): 
-			pass
-	
-		def export(self) -> dict:
-			pass
-	
-		def __init__(self, *args, **kwargs): 
-			pass
-
-
-		lat = float
-
-
 	class CapitalCosts(object):
 		def assign(self): 
 			pass

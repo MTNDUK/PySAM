@@ -242,6 +242,30 @@ SystemControl_set_F_wc(VarGroupObject *self, PyObject *value, void *closure)
 }
 
 static PyObject *
+SystemControl_get_T_tank_cold_init(VarGroupObject *self, void *closure)
+{
+	return PySAM_double_getter(SAM_TcsmoltenSalt_SystemControl_T_tank_cold_init_nget, self->data_ptr);
+}
+
+static int
+SystemControl_set_T_tank_cold_init(VarGroupObject *self, PyObject *value, void *closure)
+{
+	return PySAM_double_setter(value, SAM_TcsmoltenSalt_SystemControl_T_tank_cold_init_nset, self->data_ptr);
+}
+
+static PyObject *
+SystemControl_get_T_tank_hot_init(VarGroupObject *self, void *closure)
+{
+	return PySAM_double_getter(SAM_TcsmoltenSalt_SystemControl_T_tank_hot_init_nget, self->data_ptr);
+}
+
+static int
+SystemControl_set_T_tank_hot_init(VarGroupObject *self, PyObject *value, void *closure)
+{
+	return PySAM_double_setter(value, SAM_TcsmoltenSalt_SystemControl_T_tank_hot_init_nset, self->data_ptr);
+}
+
+static PyObject *
 SystemControl_get_ampl_data_dir(VarGroupObject *self, void *closure)
 {
 	return PySAM_string_getter(SAM_TcsmoltenSalt_SystemControl_ampl_data_dir_sget, self->data_ptr);
@@ -626,6 +650,18 @@ SystemControl_set_f_turb_tou_periods(VarGroupObject *self, PyObject *value, void
 }
 
 static PyObject *
+SystemControl_get_is_PAR_HTR_allowed_in(VarGroupObject *self, void *closure)
+{
+	return PySAM_array_getter(SAM_TcsmoltenSalt_SystemControl_is_PAR_HTR_allowed_in_aget, self->data_ptr);
+}
+
+static int
+SystemControl_set_is_PAR_HTR_allowed_in(VarGroupObject *self, PyObject *value, void *closure)
+{
+	return PySAM_array_setter(value, SAM_TcsmoltenSalt_SystemControl_is_PAR_HTR_allowed_in_aset, self->data_ptr);
+}
+
+static PyObject *
 SystemControl_get_is_ampl_engine(VarGroupObject *self, void *closure)
 {
 	return PySAM_double_getter(SAM_TcsmoltenSalt_SystemControl_is_ampl_engine_nget, self->data_ptr);
@@ -662,6 +698,30 @@ SystemControl_set_is_dispatch_series(VarGroupObject *self, PyObject *value, void
 }
 
 static PyObject *
+SystemControl_get_is_dispatch_targets(VarGroupObject *self, void *closure)
+{
+	return PySAM_double_getter(SAM_TcsmoltenSalt_SystemControl_is_dispatch_targets_nget, self->data_ptr);
+}
+
+static int
+SystemControl_set_is_dispatch_targets(VarGroupObject *self, PyObject *value, void *closure)
+{
+	return PySAM_double_setter(value, SAM_TcsmoltenSalt_SystemControl_is_dispatch_targets_nset, self->data_ptr);
+}
+
+static PyObject *
+SystemControl_get_is_field_tracking_init(VarGroupObject *self, void *closure)
+{
+	return PySAM_double_getter(SAM_TcsmoltenSalt_SystemControl_is_field_tracking_init_nget, self->data_ptr);
+}
+
+static int
+SystemControl_set_is_field_tracking_init(VarGroupObject *self, PyObject *value, void *closure)
+{
+	return PySAM_double_setter(value, SAM_TcsmoltenSalt_SystemControl_is_field_tracking_init_nset, self->data_ptr);
+}
+
+static PyObject *
 SystemControl_get_is_parallel_htr(VarGroupObject *self, void *closure)
 {
 	return PySAM_double_getter(SAM_TcsmoltenSalt_SystemControl_is_parallel_htr_nget, self->data_ptr);
@@ -671,6 +731,42 @@ static int
 SystemControl_set_is_parallel_htr(VarGroupObject *self, PyObject *value, void *closure)
 {
 	return PySAM_double_setter(value, SAM_TcsmoltenSalt_SystemControl_is_parallel_htr_nset, self->data_ptr);
+}
+
+static PyObject *
+SystemControl_get_is_pc_sb_allowed_in(VarGroupObject *self, void *closure)
+{
+	return PySAM_array_getter(SAM_TcsmoltenSalt_SystemControl_is_pc_sb_allowed_in_aget, self->data_ptr);
+}
+
+static int
+SystemControl_set_is_pc_sb_allowed_in(VarGroupObject *self, PyObject *value, void *closure)
+{
+	return PySAM_array_setter(value, SAM_TcsmoltenSalt_SystemControl_is_pc_sb_allowed_in_aset, self->data_ptr);
+}
+
+static PyObject *
+SystemControl_get_is_pc_su_allowed_in(VarGroupObject *self, void *closure)
+{
+	return PySAM_array_getter(SAM_TcsmoltenSalt_SystemControl_is_pc_su_allowed_in_aget, self->data_ptr);
+}
+
+static int
+SystemControl_set_is_pc_su_allowed_in(VarGroupObject *self, PyObject *value, void *closure)
+{
+	return PySAM_array_setter(value, SAM_TcsmoltenSalt_SystemControl_is_pc_su_allowed_in_aset, self->data_ptr);
+}
+
+static PyObject *
+SystemControl_get_is_rec_su_allowed_in(VarGroupObject *self, void *closure)
+{
+	return PySAM_array_getter(SAM_TcsmoltenSalt_SystemControl_is_rec_su_allowed_in_aget, self->data_ptr);
+}
+
+static int
+SystemControl_set_is_rec_su_allowed_in(VarGroupObject *self, PyObject *value, void *closure)
+{
+	return PySAM_array_setter(value, SAM_TcsmoltenSalt_SystemControl_is_rec_su_allowed_in_aset, self->data_ptr);
 }
 
 static PyObject *
@@ -734,6 +830,90 @@ SystemControl_set_pb_fixed_par(VarGroupObject *self, PyObject *value, void *clos
 }
 
 static PyObject *
+SystemControl_get_pc_op_mode_initial(VarGroupObject *self, void *closure)
+{
+	return PySAM_double_getter(SAM_TcsmoltenSalt_SystemControl_pc_op_mode_initial_nget, self->data_ptr);
+}
+
+static int
+SystemControl_set_pc_op_mode_initial(VarGroupObject *self, PyObject *value, void *closure)
+{
+	return PySAM_double_setter(value, SAM_TcsmoltenSalt_SystemControl_pc_op_mode_initial_nset, self->data_ptr);
+}
+
+static PyObject *
+SystemControl_get_pc_startup_energy_remain_initial(VarGroupObject *self, void *closure)
+{
+	return PySAM_double_getter(SAM_TcsmoltenSalt_SystemControl_pc_startup_energy_remain_initial_nget, self->data_ptr);
+}
+
+static int
+SystemControl_set_pc_startup_energy_remain_initial(VarGroupObject *self, PyObject *value, void *closure)
+{
+	return PySAM_double_setter(value, SAM_TcsmoltenSalt_SystemControl_pc_startup_energy_remain_initial_nset, self->data_ptr);
+}
+
+static PyObject *
+SystemControl_get_pc_startup_time_remain_init(VarGroupObject *self, void *closure)
+{
+	return PySAM_double_getter(SAM_TcsmoltenSalt_SystemControl_pc_startup_time_remain_init_nget, self->data_ptr);
+}
+
+static int
+SystemControl_set_pc_startup_time_remain_init(VarGroupObject *self, PyObject *value, void *closure)
+{
+	return PySAM_double_setter(value, SAM_TcsmoltenSalt_SystemControl_pc_startup_time_remain_init_nset, self->data_ptr);
+}
+
+static PyObject *
+SystemControl_get_q_dot_elec_to_PAR_HTR_in(VarGroupObject *self, void *closure)
+{
+	return PySAM_array_getter(SAM_TcsmoltenSalt_SystemControl_q_dot_elec_to_PAR_HTR_in_aget, self->data_ptr);
+}
+
+static int
+SystemControl_set_q_dot_elec_to_PAR_HTR_in(VarGroupObject *self, PyObject *value, void *closure)
+{
+	return PySAM_array_setter(value, SAM_TcsmoltenSalt_SystemControl_q_dot_elec_to_PAR_HTR_in_aset, self->data_ptr);
+}
+
+static PyObject *
+SystemControl_get_q_pc_max_in(VarGroupObject *self, void *closure)
+{
+	return PySAM_array_getter(SAM_TcsmoltenSalt_SystemControl_q_pc_max_in_aget, self->data_ptr);
+}
+
+static int
+SystemControl_set_q_pc_max_in(VarGroupObject *self, PyObject *value, void *closure)
+{
+	return PySAM_array_setter(value, SAM_TcsmoltenSalt_SystemControl_q_pc_max_in_aset, self->data_ptr);
+}
+
+static PyObject *
+SystemControl_get_q_pc_target_on_in(VarGroupObject *self, void *closure)
+{
+	return PySAM_array_getter(SAM_TcsmoltenSalt_SystemControl_q_pc_target_on_in_aget, self->data_ptr);
+}
+
+static int
+SystemControl_set_q_pc_target_on_in(VarGroupObject *self, PyObject *value, void *closure)
+{
+	return PySAM_array_setter(value, SAM_TcsmoltenSalt_SystemControl_q_pc_target_on_in_aset, self->data_ptr);
+}
+
+static PyObject *
+SystemControl_get_q_pc_target_su_in(VarGroupObject *self, void *closure)
+{
+	return PySAM_array_getter(SAM_TcsmoltenSalt_SystemControl_q_pc_target_su_in_aget, self->data_ptr);
+}
+
+static int
+SystemControl_set_q_pc_target_su_in(VarGroupObject *self, PyObject *value, void *closure)
+{
+	return PySAM_array_setter(value, SAM_TcsmoltenSalt_SystemControl_q_pc_target_su_in_aset, self->data_ptr);
+}
+
+static PyObject *
 SystemControl_get_q_rec_heattrace(VarGroupObject *self, void *closure)
 {
 	return PySAM_double_getter(SAM_TcsmoltenSalt_SystemControl_q_rec_heattrace_nget, self->data_ptr);
@@ -755,6 +935,42 @@ static int
 SystemControl_set_q_rec_standby(VarGroupObject *self, PyObject *value, void *closure)
 {
 	return PySAM_double_setter(value, SAM_TcsmoltenSalt_SystemControl_q_rec_standby_nset, self->data_ptr);
+}
+
+static PyObject *
+SystemControl_get_rec_op_mode_initial(VarGroupObject *self, void *closure)
+{
+	return PySAM_double_getter(SAM_TcsmoltenSalt_SystemControl_rec_op_mode_initial_nget, self->data_ptr);
+}
+
+static int
+SystemControl_set_rec_op_mode_initial(VarGroupObject *self, PyObject *value, void *closure)
+{
+	return PySAM_double_setter(value, SAM_TcsmoltenSalt_SystemControl_rec_op_mode_initial_nset, self->data_ptr);
+}
+
+static PyObject *
+SystemControl_get_rec_startup_energy_remain_init(VarGroupObject *self, void *closure)
+{
+	return PySAM_double_getter(SAM_TcsmoltenSalt_SystemControl_rec_startup_energy_remain_init_nget, self->data_ptr);
+}
+
+static int
+SystemControl_set_rec_startup_energy_remain_init(VarGroupObject *self, PyObject *value, void *closure)
+{
+	return PySAM_double_setter(value, SAM_TcsmoltenSalt_SystemControl_rec_startup_energy_remain_init_nset, self->data_ptr);
+}
+
+static PyObject *
+SystemControl_get_rec_startup_time_remain_init(VarGroupObject *self, void *closure)
+{
+	return PySAM_double_getter(SAM_TcsmoltenSalt_SystemControl_rec_startup_time_remain_init_nget, self->data_ptr);
+}
+
+static int
+SystemControl_set_rec_startup_time_remain_init(VarGroupObject *self, PyObject *value, void *closure)
+{
+	return PySAM_double_setter(value, SAM_TcsmoltenSalt_SystemControl_rec_startup_time_remain_init_nset, self->data_ptr);
 }
 
 static PyObject *
@@ -869,6 +1085,12 @@ static PyGetSetDef SystemControl_getset[] = {
 {"F_wc", (getter)SystemControl_get_F_wc,(setter)SystemControl_set_F_wc,
 	PyDoc_STR("*sequence*: TOU array of fractions indicating wet cooling share for hybrid cooling\n\n**Required:**\nRequired if pc_config=0"),
  	NULL},
+{"T_tank_cold_init", (getter)SystemControl_get_T_tank_cold_init,(setter)SystemControl_set_T_tank_cold_init,
+	PyDoc_STR("*float*: Initial cold tank temp [C]"),
+ 	NULL},
+{"T_tank_hot_init", (getter)SystemControl_get_T_tank_hot_init,(setter)SystemControl_set_T_tank_hot_init,
+	PyDoc_STR("*float*: Initial hot tank temp [C]"),
+ 	NULL},
 {"ampl_data_dir", (getter)SystemControl_get_ampl_data_dir,(setter)SystemControl_set_ampl_data_dir,
 	PyDoc_STR("*str*: AMPL data file directory\n\n**Required:**\nFalse. Automatically set to '' if not assigned explicitly or loaded from defaults."),
  	NULL},
@@ -942,7 +1164,7 @@ static PyGetSetDef SystemControl_getset[] = {
 	PyDoc_STR("*float*: Dispatch optimization B&B heuristic\n\n**Required:**\nFalse. Automatically set to -1 if not assigned explicitly or loaded from defaults."),
  	NULL},
 {"disp_spec_presolve", (getter)SystemControl_get_disp_spec_presolve,(setter)SystemControl_set_disp_spec_presolve,
-	PyDoc_STR("*float*: Dispatch optimization presolve heuristic\n\n**Required:**\nFalse. Automatically set to -1 if not assigned explicitly or loaded from defaults."),
+	PyDoc_STR("*float*: Dispatch optimization pre-solve heuristic\n\n**Required:**\nFalse. Automatically set to -1 if not assigned explicitly or loaded from defaults."),
  	NULL},
 {"disp_spec_scaling", (getter)SystemControl_get_disp_spec_scaling,(setter)SystemControl_set_disp_spec_scaling,
 	PyDoc_STR("*float*: Dispatch optimization scaling heuristic\n\n**Required:**\nFalse. Automatically set to -1 if not assigned explicitly or loaded from defaults."),
@@ -965,6 +1187,9 @@ static PyGetSetDef SystemControl_getset[] = {
 {"f_turb_tou_periods", (getter)SystemControl_get_f_turb_tou_periods,(setter)SystemControl_set_f_turb_tou_periods,
 	PyDoc_STR("*sequence*: Dispatch logic for turbine load fraction\n\n**Required:**\nTrue"),
  	NULL},
+{"is_PAR_HTR_allowed_in", (getter)SystemControl_get_is_PAR_HTR_allowed_in,(setter)SystemControl_set_is_PAR_HTR_allowed_in,
+	PyDoc_STR("*sequence*: User-provided is electrical heater operation allowed? [-]\n\n**Required:**\nRequired if is_dispatch_targets=1&is_parallel_htr=1"),
+ 	NULL},
 {"is_ampl_engine", (getter)SystemControl_get_is_ampl_engine,(setter)SystemControl_set_is_ampl_engine,
 	PyDoc_STR("*float*: Run dispatch optimization with external AMPL engine\n\n**Required:**\nFalse. Automatically set to 0 if not assigned explicitly or loaded from defaults."),
  	NULL},
@@ -974,8 +1199,23 @@ static PyGetSetDef SystemControl_getset[] = {
 {"is_dispatch_series", (getter)SystemControl_get_is_dispatch_series,(setter)SystemControl_set_is_dispatch_series,
 	PyDoc_STR("*float*: Use time-series dispatch factors\n\n**Required:**\nFalse. Automatically set to 0 if not assigned explicitly or loaded from defaults."),
  	NULL},
+{"is_dispatch_targets", (getter)SystemControl_get_is_dispatch_targets,(setter)SystemControl_set_is_dispatch_targets,
+	PyDoc_STR("*float*: Run solution from user-specified dispatch targets? [-]\n\n**Required:**\nFalse. Automatically set to 0 if not assigned explicitly or loaded from defaults."),
+ 	NULL},
+{"is_field_tracking_init", (getter)SystemControl_get_is_field_tracking_init,(setter)SystemControl_set_is_field_tracking_init,
+	PyDoc_STR("*float*: Is heliostat field tracking? (1 = true) [-]"),
+ 	NULL},
 {"is_parallel_htr", (getter)SystemControl_get_is_parallel_htr,(setter)SystemControl_set_is_parallel_htr,
 	PyDoc_STR("*float*: Does plant include a HTF heater parallel to solar field?\n\n**Required:**\nFalse. Automatically set to 0 if not assigned explicitly or loaded from defaults."),
+ 	NULL},
+{"is_pc_sb_allowed_in", (getter)SystemControl_get_is_pc_sb_allowed_in,(setter)SystemControl_set_is_pc_sb_allowed_in,
+	PyDoc_STR("*sequence*: User-provided is power cycle standby allowed? [-]\n\n**Required:**\nRequired if is_dispatch_targets=1"),
+ 	NULL},
+{"is_pc_su_allowed_in", (getter)SystemControl_get_is_pc_su_allowed_in,(setter)SystemControl_set_is_pc_su_allowed_in,
+	PyDoc_STR("*sequence*: User-provided is power cycle startup allowed? [-]\n\n**Required:**\nRequired if is_dispatch_targets=1"),
+ 	NULL},
+{"is_rec_su_allowed_in", (getter)SystemControl_get_is_rec_su_allowed_in,(setter)SystemControl_set_is_rec_su_allowed_in,
+	PyDoc_STR("*sequence*: User-provided is receiver startup allowed? [-]\n\n**Required:**\nRequired if is_dispatch_targets=1"),
  	NULL},
 {"is_tod_pc_target_also_pc_max", (getter)SystemControl_get_is_tod_pc_target_also_pc_max,(setter)SystemControl_set_is_tod_pc_target_also_pc_max,
 	PyDoc_STR("*float*: Is the TOD target cycle heat input also the max cycle heat input?\n\n**Required:**\nFalse. Automatically set to 0 if not assigned explicitly or loaded from defaults."),
@@ -992,11 +1232,41 @@ static PyGetSetDef SystemControl_getset[] = {
 {"pb_fixed_par", (getter)SystemControl_get_pb_fixed_par,(setter)SystemControl_set_pb_fixed_par,
 	PyDoc_STR("*float*: Fixed parasitic load - runs at all times [MWe/MWcap]\n\n**Required:**\nTrue"),
  	NULL},
+{"pc_op_mode_initial", (getter)SystemControl_get_pc_op_mode_initial,(setter)SystemControl_set_pc_op_mode_initial,
+	PyDoc_STR("*float*: Initial cycle operation mode 0:startup, 1:on, 2:standby, 3:off, 4:startup_controlled [-]"),
+ 	NULL},
+{"pc_startup_energy_remain_initial", (getter)SystemControl_get_pc_startup_energy_remain_initial,(setter)SystemControl_set_pc_startup_energy_remain_initial,
+	PyDoc_STR("*float*: Initial cycle startup energy remaining [kwh]"),
+ 	NULL},
+{"pc_startup_time_remain_init", (getter)SystemControl_get_pc_startup_time_remain_init,(setter)SystemControl_set_pc_startup_time_remain_init,
+	PyDoc_STR("*float*: Initial cycle startup time remaining [hr]"),
+ 	NULL},
+{"q_dot_elec_to_PAR_HTR_in", (getter)SystemControl_get_q_dot_elec_to_PAR_HTR_in,(setter)SystemControl_set_q_dot_elec_to_PAR_HTR_in,
+	PyDoc_STR("*sequence*: User-provided electrical power to parallel heater [-]\n\n**Required:**\nRequired if is_dispatch_targets=1&is_parallel_htr=1"),
+ 	NULL},
+{"q_pc_max_in", (getter)SystemControl_get_q_pc_max_in,(setter)SystemControl_set_q_pc_max_in,
+	PyDoc_STR("*sequence*: User-provided max thermal power to PC [MWt]\n\n**Required:**\nRequired if is_dispatch_targets=1"),
+ 	NULL},
+{"q_pc_target_on_in", (getter)SystemControl_get_q_pc_target_on_in,(setter)SystemControl_set_q_pc_target_on_in,
+	PyDoc_STR("*sequence*: User-provided target thermal power to PC [MWt]\n\n**Required:**\nRequired if is_dispatch_targets=1"),
+ 	NULL},
+{"q_pc_target_su_in", (getter)SystemControl_get_q_pc_target_su_in,(setter)SystemControl_set_q_pc_target_su_in,
+	PyDoc_STR("*sequence*: User-provided target thermal power to PC [MWt]\n\n**Required:**\nRequired if is_dispatch_targets=1"),
+ 	NULL},
 {"q_rec_heattrace", (getter)SystemControl_get_q_rec_heattrace,(setter)SystemControl_set_q_rec_heattrace,
 	PyDoc_STR("*float*: Receiver heat trace energy consumption during startup [kWe-hr]\n\n**Required:**\nFalse. Automatically set to 0.0 if not assigned explicitly or loaded from defaults."),
  	NULL},
 {"q_rec_standby", (getter)SystemControl_get_q_rec_standby,(setter)SystemControl_set_q_rec_standby,
 	PyDoc_STR("*float*: Receiver standby energy consumption [kWt]\n\n**Required:**\nFalse. Automatically set to 9e99 if not assigned explicitly or loaded from defaults."),
+ 	NULL},
+{"rec_op_mode_initial", (getter)SystemControl_get_rec_op_mode_initial,(setter)SystemControl_set_rec_op_mode_initial,
+	PyDoc_STR("*float*: Initial receiver operating mode 0: off, 1: startup, 2: on [-]"),
+ 	NULL},
+{"rec_startup_energy_remain_init", (getter)SystemControl_get_rec_startup_energy_remain_init,(setter)SystemControl_set_rec_startup_energy_remain_init,
+	PyDoc_STR("*float*: Initial receiver startup energy remaining [W-hr]"),
+ 	NULL},
+{"rec_startup_time_remain_init", (getter)SystemControl_get_rec_startup_time_remain_init,(setter)SystemControl_set_rec_startup_time_remain_init,
+	PyDoc_STR("*float*: Initial receiver startup time remaining [hr]"),
  	NULL},
 {"sim_type", (getter)SystemControl_get_sim_type,(setter)SystemControl_set_sim_type,
 	PyDoc_STR("*float*: 1 (default): timeseries, 2: design only\n\n**Required:**\nFalse. Automatically set to 1 if not assigned explicitly or loaded from defaults."),
@@ -1023,7 +1293,7 @@ static PyGetSetDef SystemControl_getset[] = {
 	PyDoc_STR("*sequence[sequence]*: 12x24 CSP operation Time-of-Use Weekend schedule\n\n**Required:**\nTrue"),
  	NULL},
 {"wlim_series", (getter)SystemControl_get_wlim_series,(setter)SystemControl_set_wlim_series,
-	PyDoc_STR("*sequence*: Time series net electicity generation limits (dispatch opt only) [kWe]\n\n**Required:**\nRequired if is_wlim_series=1"),
+	PyDoc_STR("*sequence*: Time series net electricity generation limits (dispatch opt only) [kWe]\n\n**Required:**\nRequired if is_wlim_series=1"),
  	NULL},
 	{NULL}  /* Sentinel */
 };
@@ -4636,13 +4906,13 @@ static PyGetSetDef RADCOOL_getset[] = {
 	PyDoc_STR("*float*: Effectiveness of HX between radiative field and cold storage [-]\n\n**Required:**\nFalse. Automatically set to .8 if not assigned explicitly or loaded from defaults."),
  	NULL},
 {"epsilon_radbot", (getter)RADCOOL_get_epsilon_radbot,(setter)RADCOOL_set_epsilon_radbot,
-	PyDoc_STR("*float*: Emmissivity of top of radiator panel bottom (facing ground) [-]\n\n**Required:**\nFalse. Automatically set to .07 if not assigned explicitly or loaded from defaults."),
+	PyDoc_STR("*float*: Emissivity of top of radiator panel bottom (facing ground) [-]\n\n**Required:**\nFalse. Automatically set to .07 if not assigned explicitly or loaded from defaults."),
  	NULL},
 {"epsilon_radgrnd", (getter)RADCOOL_get_epsilon_radgrnd,(setter)RADCOOL_set_epsilon_radgrnd,
-	PyDoc_STR("*float*: Emmissivity of ground underneath radiator panel [-]\n\n**Required:**\nFalse. Automatically set to .90 if not assigned explicitly or loaded from defaults."),
+	PyDoc_STR("*float*: Emissivity of ground underneath radiator panel [-]\n\n**Required:**\nFalse. Automatically set to .90 if not assigned explicitly or loaded from defaults."),
  	NULL},
 {"epsilon_radtop", (getter)RADCOOL_get_epsilon_radtop,(setter)RADCOOL_set_epsilon_radtop,
-	PyDoc_STR("*float*: Emmissivity of top of radiator panel [-]\n\n**Required:**\nFalse. Automatically set to .95 if not assigned explicitly or loaded from defaults."),
+	PyDoc_STR("*float*: Emissivity of top of radiator panel [-]\n\n**Required:**\nFalse. Automatically set to .95 if not assigned explicitly or loaded from defaults."),
  	NULL},
 {"f_ctes_warm_ini", (getter)RADCOOL_get_f_ctes_warm_ini,(setter)RADCOOL_set_f_ctes_warm_ini,
 	PyDoc_STR("*float*: Initial fraction of avail. volume that is warm [-]\n\n**Required:**\nFalse. Automatically set to 0 if not assigned explicitly or loaded from defaults."),
@@ -4663,7 +4933,7 @@ static PyGetSetDef RADCOOL_getset[] = {
 	PyDoc_STR("*float*: Number of parallel tubes in single radiator panel [-]\n\n**Required:**\nFalse. Automatically set to 0 if not assigned explicitly or loaded from defaults."),
  	NULL},
 {"rad_multiplier", (getter)RADCOOL_get_rad_multiplier,(setter)RADCOOL_set_rad_multiplier,
-	PyDoc_STR("*float*: Ratio of radiator field area to solar aperature area [-]\n\n**Required:**\nFalse. Automatically set to 0 if not assigned explicitly or loaded from defaults."),
+	PyDoc_STR("*float*: Ratio of radiator field area to solar aperture area [-]\n\n**Required:**\nFalse. Automatically set to 0 if not assigned explicitly or loaded from defaults."),
  	NULL},
 {"rad_pressuredrop", (getter)RADCOOL_get_rad_pressuredrop,(setter)RADCOOL_set_rad_pressuredrop,
 	PyDoc_STR("*float*: Average pressure drop through a radiative panel & distribution [kPa]\n\n**Required:**\nFalse. Automatically set to 0 if not assigned explicitly or loaded from defaults."),
@@ -5156,7 +5426,7 @@ RankineCycle_set_tech_type(VarGroupObject *self, PyObject *value, void *closure)
 
 static PyGetSetDef RankineCycle_getset[] = {
 {"CT", (getter)RankineCycle_get_CT,(setter)RankineCycle_set_CT,
-	PyDoc_STR("*float*: Condensor type: 1=evaporative, 2=air, 3=hybrid\n\n**Required:**\nRequired if pc_config=0"),
+	PyDoc_STR("*float*: Condenser type: 1=evaporative, 2=air, 3=hybrid\n\n**Required:**\nRequired if pc_config=0"),
  	NULL},
 {"P_cond_min", (getter)RankineCycle_get_P_cond_min,(setter)RankineCycle_set_P_cond_min,
 	PyDoc_STR("*float*: Minimum condenser pressure [inHg]\n\n**Required:**\nRequired if pc_config=0"),
@@ -5380,7 +5650,7 @@ static PyGetSetDef UserDefinedPowerCycle_getset[] = {
 	PyDoc_STR("*float*: Mass flow rate of water required at user-defined power cycle design point [kg/s]\n\n**Required:**\nRequired if pc_config=1"),
  	NULL},
 {"use_net_cycle_output_as_capacity", (getter)UserDefinedPowerCycle_get_use_net_cycle_output_as_capacity,(setter)UserDefinedPowerCycle_set_use_net_cycle_output_as_capacity,
-	PyDoc_STR("*float*: False: default, use net calculation including system parasitics, True: for UDPC only, set as cycle output less cooling power\n\n**Required:**\nFalse. Automatically set to 0 if not assigned explicitly or loaded from defaults."),
+	PyDoc_STR("*float*: False: default, use net calculation including system parasitic, True: for UDPC only, set as cycle output less cooling power\n\n**Required:**\nFalse. Automatically set to 0 if not assigned explicitly or loaded from defaults."),
  	NULL},
 	{NULL}  /* Sentinel */
 };
@@ -7538,6 +7808,18 @@ Outputs_get_csp_pt_cost_tower(VarGroupObject *self, void *closure)
 }
 
 static PyObject *
+Outputs_get_cycle_Tdb_table(VarGroupObject *self, void *closure)
+{
+	return PySAM_matrix_getter(SAM_TcsmoltenSalt_Outputs_cycle_Tdb_table_mget, self->data_ptr);
+}
+
+static PyObject *
+Outputs_get_cycle_eff_load_table(VarGroupObject *self, void *closure)
+{
+	return PySAM_matrix_getter(SAM_TcsmoltenSalt_Outputs_cycle_eff_load_table_mget, self->data_ptr);
+}
+
+static PyObject *
 Outputs_get_cycle_htf_pump_power(VarGroupObject *self, void *closure)
 {
 	return PySAM_array_getter(SAM_TcsmoltenSalt_Outputs_cycle_htf_pump_power_aget, self->data_ptr);
@@ -7814,9 +8096,21 @@ Outputs_get_hot_hours_revenue_fraction(VarGroupObject *self, void *closure)
 }
 
 static PyObject *
+Outputs_get_hot_tank_htf_percent_final(VarGroupObject *self, void *closure)
+{
+	return PySAM_array_getter(SAM_TcsmoltenSalt_Outputs_hot_tank_htf_percent_final_aget, self->data_ptr);
+}
+
+static PyObject *
 Outputs_get_is_PAR_HTR_allowed(VarGroupObject *self, void *closure)
 {
 	return PySAM_array_getter(SAM_TcsmoltenSalt_Outputs_is_PAR_HTR_allowed_aget, self->data_ptr);
+}
+
+static PyObject *
+Outputs_get_is_field_tracking_final(VarGroupObject *self, void *closure)
+{
+	return PySAM_array_getter(SAM_TcsmoltenSalt_Outputs_is_field_tracking_final_aget, self->data_ptr);
 }
 
 static PyObject *
@@ -8066,6 +8360,24 @@ Outputs_get_operating_modes_c(VarGroupObject *self, void *closure)
 }
 
 static PyObject *
+Outputs_get_pc_op_mode_final(VarGroupObject *self, void *closure)
+{
+	return PySAM_array_getter(SAM_TcsmoltenSalt_Outputs_pc_op_mode_final_aget, self->data_ptr);
+}
+
+static PyObject *
+Outputs_get_pc_startup_energy_remain_final(VarGroupObject *self, void *closure)
+{
+	return PySAM_array_getter(SAM_TcsmoltenSalt_Outputs_pc_startup_energy_remain_final_aget, self->data_ptr);
+}
+
+static PyObject *
+Outputs_get_pc_startup_time_remain_final(VarGroupObject *self, void *closure)
+{
+	return PySAM_array_getter(SAM_TcsmoltenSalt_Outputs_pc_startup_time_remain_final_aget, self->data_ptr);
+}
+
+static PyObject *
 Outputs_get_pparasi(VarGroupObject *self, void *closure)
 {
 	return PySAM_array_getter(SAM_TcsmoltenSalt_Outputs_pparasi_aget, self->data_ptr);
@@ -8270,6 +8582,24 @@ Outputs_get_rec_height_calc(VarGroupObject *self, void *closure)
 }
 
 static PyObject *
+Outputs_get_rec_op_mode_final(VarGroupObject *self, void *closure)
+{
+	return PySAM_array_getter(SAM_TcsmoltenSalt_Outputs_rec_op_mode_final_aget, self->data_ptr);
+}
+
+static PyObject *
+Outputs_get_rec_startup_energy_remain_final(VarGroupObject *self, void *closure)
+{
+	return PySAM_array_getter(SAM_TcsmoltenSalt_Outputs_rec_startup_energy_remain_final_aget, self->data_ptr);
+}
+
+static PyObject *
+Outputs_get_rec_startup_time_remain_final(VarGroupObject *self, void *closure)
+{
+	return PySAM_array_getter(SAM_TcsmoltenSalt_Outputs_rec_startup_time_remain_final_aget, self->data_ptr);
+}
+
+static PyObject *
 Outputs_get_refl_image_error(VarGroupObject *self, void *closure)
 {
 	return PySAM_double_getter(SAM_TcsmoltenSalt_Outputs_refl_image_error_nget, self->data_ptr);
@@ -8442,10 +8772,10 @@ static PyGetSetDef Outputs_getset[] = {
 	PyDoc_STR("*float*: Number of heliostats - out"),
  	NULL},
 {"P_cond", (getter)Outputs_get_P_cond,(setter)0,
-	PyDoc_STR("*sequence*: PC condensing presssure [Pa]"),
+	PyDoc_STR("*sequence*: PC condensing pressure [Pa]"),
  	NULL},
 {"P_cond_iter_err", (getter)Outputs_get_P_cond_iter_err,(setter)0,
-	PyDoc_STR("*sequence*: PC condenser presure iteration error"),
+	PyDoc_STR("*sequence*: PC condenser pressure iteration error"),
  	NULL},
 {"P_cooling_tower_tot", (getter)Outputs_get_P_cooling_tower_tot,(setter)0,
 	PyDoc_STR("*sequence*: Parasitic power condenser operation [MWe]"),
@@ -8565,7 +8895,7 @@ static PyGetSetDef Outputs_getset[] = {
 	PyDoc_STR("*float*: TES total HTF volume [m3]"),
  	NULL},
 {"W_dot_bop_design", (getter)Outputs_get_W_dot_bop_design,(setter)0,
-	PyDoc_STR("*float*: BOP parasitics at design [MWe]"),
+	PyDoc_STR("*float*: BOP parasitic at design [MWe]"),
  	NULL},
 {"W_dot_col_tracking_des", (getter)Outputs_get_W_dot_col_tracking_des,(setter)0,
 	PyDoc_STR("*float*: Collector tracking power at design [MWe]"),
@@ -8610,7 +8940,7 @@ static PyGetSetDef Outputs_getset[] = {
 	PyDoc_STR("*float*: Annual tower pumping power [MWe-hr]"),
  	NULL},
 {"annual_W_cooling_tower", (getter)Outputs_get_annual_W_cooling_tower,(setter)0,
-	PyDoc_STR("*float*: Total of condenser operation parasitics [kWhe]"),
+	PyDoc_STR("*float*: Total of condenser operation parasitic [kWhe]"),
  	NULL},
 {"annual_W_cycle_gross", (getter)Outputs_get_annual_W_cycle_gross,(setter)0,
 	PyDoc_STR("*float*: Electrical source - power cycle gross output [kWhe]"),
@@ -8801,6 +9131,12 @@ static PyGetSetDef Outputs_getset[] = {
 {"csp_pt_cost_tower", (getter)Outputs_get_csp_pt_cost_tower,(setter)0,
 	PyDoc_STR("*float*: Tower cost [$]"),
  	NULL},
+{"cycle_Tdb_table", (getter)Outputs_get_cycle_Tdb_table,(setter)0,
+	PyDoc_STR("*sequence[sequence]*: Normalized cycle efficiency and condenser power vs. ambient temperature"),
+ 	NULL},
+{"cycle_eff_load_table", (getter)Outputs_get_cycle_eff_load_table,(setter)0,
+	PyDoc_STR("*sequence[sequence]*: Cycle efficiency vs. thermal load"),
+ 	NULL},
 {"cycle_htf_pump_power", (getter)Outputs_get_cycle_htf_pump_power,(setter)0,
 	PyDoc_STR("*sequence*: Cycle HTF pump power [MWe]"),
  	NULL},
@@ -8850,7 +9186,7 @@ static PyGetSetDef Outputs_getset[] = {
 	PyDoc_STR("*sequence*: Dispatch expected solar field generation [MWt]"),
  	NULL},
 {"disp_qsfsu_expected", (getter)Outputs_get_disp_qsfsu_expected,(setter)0,
-	PyDoc_STR("*sequence*: Dispatch expected solar field startup enegy [MWt]"),
+	PyDoc_STR("*sequence*: Dispatch expected solar field startup energy [MWt]"),
  	NULL},
 {"disp_rel_mip_gap", (getter)Outputs_get_disp_rel_mip_gap,(setter)0,
 	PyDoc_STR("*sequence*: Dispatch relative MIP gap"),
@@ -8939,8 +9275,14 @@ static PyGetSetDef Outputs_getset[] = {
 {"hot_hours_revenue_fraction", (getter)Outputs_get_hot_hours_revenue_fraction,(setter)0,
 	PyDoc_STR("*float*: Fraction of potential revenue (based on system capacity) earned during hours hotter than 33 C [-]"),
  	NULL},
+{"hot_tank_htf_percent_final", (getter)Outputs_get_hot_tank_htf_percent_final,(setter)0,
+	PyDoc_STR("*sequence*: Final percent fill of available hot tank mass [%]"),
+ 	NULL},
 {"is_PAR_HTR_allowed", (getter)Outputs_get_is_PAR_HTR_allowed,(setter)0,
 	PyDoc_STR("*sequence*: Is parallel electric heater operation allowed"),
+ 	NULL},
+{"is_field_tracking_final", (getter)Outputs_get_is_field_tracking_final,(setter)0,
+	PyDoc_STR("*sequence*: Final heliostat field operation is tracking? (1 = true) [-]"),
  	NULL},
 {"is_pc_sb_allowed", (getter)Outputs_get_is_pc_sb_allowed,(setter)0,
 	PyDoc_STR("*sequence*: Is power cycle standby allowed"),
@@ -9065,6 +9407,15 @@ static PyGetSetDef Outputs_getset[] = {
 {"operating_modes_c", (getter)Outputs_get_operating_modes_c,(setter)0,
 	PyDoc_STR("*sequence*: Final 3 operating modes tried"),
  	NULL},
+{"pc_op_mode_final", (getter)Outputs_get_pc_op_mode_final,(setter)0,
+	PyDoc_STR("*sequence*: Final cycle operation mode 0:startup, 1:on, 2:standby, 3:off, 4:startup_controlled [-]"),
+ 	NULL},
+{"pc_startup_energy_remain_final", (getter)Outputs_get_pc_startup_energy_remain_final,(setter)0,
+	PyDoc_STR("*sequence*: Final cycle startup energy remaining [kwh]"),
+ 	NULL},
+{"pc_startup_time_remain_final", (getter)Outputs_get_pc_startup_time_remain_final,(setter)0,
+	PyDoc_STR("*sequence*: Final cycle startup time remaining [hr]"),
+ 	NULL},
 {"pparasi", (getter)Outputs_get_pparasi,(setter)0,
 	PyDoc_STR("*sequence*: Field tracking power [MWe]"),
  	NULL},
@@ -9167,6 +9518,15 @@ static PyGetSetDef Outputs_getset[] = {
 {"rec_height_calc", (getter)Outputs_get_rec_height_calc,(setter)0,
 	PyDoc_STR("*float*: Receiver height - out [m]"),
  	NULL},
+{"rec_op_mode_final", (getter)Outputs_get_rec_op_mode_final,(setter)0,
+	PyDoc_STR("*sequence*: Final receiver operating mode 0: off, 1: startup, 2: on [-]"),
+ 	NULL},
+{"rec_startup_energy_remain_final", (getter)Outputs_get_rec_startup_energy_remain_final,(setter)0,
+	PyDoc_STR("*sequence*: Final receiver startup energy remaining [W-hr]"),
+ 	NULL},
+{"rec_startup_time_remain_final", (getter)Outputs_get_rec_startup_time_remain_final,(setter)0,
+	PyDoc_STR("*sequence*: Final receiver startup time remaining [hr]"),
+ 	NULL},
 {"refl_image_error", (getter)Outputs_get_refl_image_error,(setter)0,
 	PyDoc_STR("*float*: Reflected image error [mrad]"),
  	NULL},
@@ -9234,7 +9594,7 @@ static PyGetSetDef Outputs_getset[] = {
 	PyDoc_STR("*sequence*: Resource wet Bulb temperature [C]"),
  	NULL},
 {"ui_direct_subtotal", (getter)Outputs_get_ui_direct_subtotal,(setter)0,
-	PyDoc_STR("*float*: Direct capital precontingency cost [$]"),
+	PyDoc_STR("*float*: Direct capital pre-contingency cost [$]"),
  	NULL},
 {"vel_rec_htf_des", (getter)Outputs_get_vel_rec_htf_des,(setter)0,
 	PyDoc_STR("*float*: Receiver estimated tube HTF velocity at design [m/s]"),

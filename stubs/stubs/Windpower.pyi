@@ -57,6 +57,7 @@ class Windpower(object):
 		pass
 
 		wind_resource_shear = float
+		wind_turbine_ct_curve = tuple
 		wind_turbine_hub_ht = float
 		wind_turbine_max_cp = float
 		wind_turbine_powercurve_powerout = tuple
@@ -76,7 +77,9 @@ class Windpower(object):
 
 
 		max_turbine_override = float
+		park_wake_decay_constant = float
 		system_capacity = float
+		wake_loss_multiplier = float
 		wind_farm_wake_model = float
 		wind_farm_xCoordinates = tuple
 		wind_farm_yCoordinates = tuple
@@ -208,6 +211,9 @@ class Windpower(object):
 		annual_energy_p90 = float
 		annual_energy_p95 = float
 		annual_gross_energy = float
+		annual_wake_loss_internal_kWh = float
+		annual_wake_loss_internal_percent = float
+		annual_wake_loss_total_percent = float
 		avail_losses = float
 		capacity_factor = float
 		cf_battery_replacement_cost_schedule = tuple
@@ -233,7 +239,8 @@ class Windpower(object):
 		temp = tuple
 		turb_losses = float
 		turbine_output_by_windspeed_bin = tuple
-		wake_losses = float
+		wake_loss_internal_kW = tuple
+		wake_loss_internal_percent = tuple
 		wind_direction = tuple
 		wind_speed = tuple
 		wind_speed_average = float

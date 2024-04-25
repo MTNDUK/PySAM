@@ -34,10 +34,31 @@ class TroughPhysical(object):
 			pass
 
 
+		T_in_loop_initial = float
+		T_out_loop_initial = float
+		T_out_scas_initial = tuple
+		T_tank_cold_init = float
+		T_tank_hot_init = float
+		defocus_initial = float
 		disp_csu_cost = float
 		disp_inventory_incentive = float
 		disp_rsu_cost = float
+		is_dispatch_targets = float
+		is_pc_sb_allowed_in = tuple
+		is_pc_su_allowed_in = tuple
+		is_rec_su_allowed_in = tuple
+		pc_op_mode_initial = float
+		pc_startup_energy_remain_initial = float
+		pc_startup_time_remain_init = float
+		q_pc_max_in = tuple
+		q_pc_target_on_in = tuple
+		q_pc_target_su_in = tuple
+		rec_op_mode_initial = float
 		sim_type = float
+		time_start = float
+		time_steps_per_hour = float
+		time_stop = float
+		vacuum_arrays = float
 
 
 	class Weather(object):
@@ -416,20 +437,6 @@ class TroughPhysical(object):
 		piping_loss = float
 
 
-	class SolarResourceData(object):
-		def assign(self): 
-			pass
-	
-		def export(self) -> dict:
-			pass
-	
-		def __init__(self, *args, **kwargs): 
-			pass
-
-
-		lat = float
-
-
 	class CapitalCosts(object):
 		def assign(self): 
 			pass
@@ -522,6 +529,9 @@ class TroughPhysical(object):
 		SCAs_def = tuple
 		T_field_cold_in = tuple
 		T_field_hot_out = tuple
+		T_in_loop_final = tuple
+		T_out_loop_final = tuple
+		T_out_scas_last_final = tuple
 		T_pc_in = tuple
 		T_pc_out = tuple
 		T_rec_cold_in = tuple
@@ -573,8 +583,11 @@ class TroughPhysical(object):
 		csp_dtr_sca_calc_zenith = float
 		csp_pt_tes_htf_density = float
 		csp_pt_tes_tank_diameter = float
+		cycle_Tdb_table = tuple
+		cycle_eff_load_table = tuple
 		cycle_htf_pump_power = tuple
 		defocus = tuple
+		defocus_final = tuple
 		deltaP_field = tuple
 		direct_subtotal = float
 		disp_obj_relax = tuple
@@ -607,6 +620,7 @@ class TroughPhysical(object):
 		field_thermal_output_ideal = float
 		fixed_land_area = float
 		gen = tuple
+		hot_tank_htf_percent_final = tuple
 		hour_day = tuple
 		is_hx = float
 		is_pc_sb_allowed = tuple
@@ -646,6 +660,9 @@ class TroughPhysical(object):
 		operating_modes_a = tuple
 		operating_modes_b = tuple
 		operating_modes_c = tuple
+		pc_op_mode_final = tuple
+		pc_startup_energy_remain_final = tuple
+		pc_startup_time_remain_final = tuple
 		pipe_header_P_dsn = tuple
 		pipe_header_T_dsn = tuple
 		pipe_header_diams = tuple
@@ -699,6 +716,7 @@ class TroughPhysical(object):
 		q_tes = float
 		q_tes_heater = tuple
 		qinc_costh = tuple
+		rec_op_mode_final = tuple
 		recirculating = tuple
 		required_number_of_loops_for_SM1 = float
 		rh = tuple
